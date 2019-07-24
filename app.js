@@ -12,6 +12,8 @@ const getPostsStore = require('./controllers/getPostsStore');
 const getEachPost = require('./controllers/getEachPost');
 const getRegister = require('./controllers/getRegister');
 const postRegister = require('./controllers/postRegister');
+const getLogin = require('./controllers/getLogin');
+const postLogin = require('./controllers/postLogin');
 
 // Middleware
 const storePost = require('./middleware/storePost');
@@ -40,6 +42,8 @@ app.get('/post/:id', getEachPost);
 app.get('/auth/register', getRegister);
 app.post('/auth/register', postRegister);
 
+app.get('/auth/login', getLogin);
+app.post('/auth/login', postLogin);
 
 app.listen(4000, () => {
 	console.log('App listening on port 4000');
