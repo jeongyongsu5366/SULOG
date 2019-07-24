@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const app = express();
 
+// Controllers
+const getHomepage = require('./controllers/getHomepage');
+const getPostsNew = require('./controllers/getPostsNew');
+
 dotenv.config();
 
 mongoose
@@ -14,9 +18,12 @@ mongoose
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.set('view', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.get('/', getHomepage);
+app.get('/posts/new', getPostsNew);
+
 app.listen(4000, () => {
-	console.log(`App listening on port 4000`);
+	console.log('App listening on port 4000');
 });
