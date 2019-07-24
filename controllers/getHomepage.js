@@ -1,3 +1,8 @@
-module.exports = (req, res) => {
-	res.render('homepage');
+const Post = require('../models/Post');
+
+module.exports = async (req, res) => {
+	const posts = await Post.find({});
+	res.render('homepage', {
+		posts
+	});
 };
