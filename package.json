@@ -1,0 +1,31 @@
+{
+  "name": "sulog",
+  "version": "1.0.0",
+  "description": "SU's blog project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeongyongsu5366/SULOG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeongyongsu5366/SULOG/issues"
+  },
+  "homepage": "https://github.com/jeongyongsu5366/SULOG#readme",
+  "dependencies": {
+    "@hapi/joi": "^15.1.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.5",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.6",
+    "nodemon": "^1.19.1"
+  }
+}
