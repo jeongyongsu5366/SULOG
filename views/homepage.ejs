@@ -11,24 +11,39 @@
 		<% include homepageNav %>
 
 		<div class="jumbotron">
-			<h1><i class="fas fa-dove" aria-hidden="true"></i> Lenses</h1>
-			<p>Images provided free of copyright by wonderful people</p>
+			<h1><i class="fas fa-dove" aria-hidden="true"></i> 미소와 쓴웃음</h1>
+			<br />
+			<h3>오늘 하루는 어땠나요?</h3>
 		</div>
 
 		<div class="card-deck">
+			<% posts.forEach(function(post) { %>
 			<div class="card">
-				<img class="card-img-top" src="..." alt="Card image cap" />
+				<div class="card-img-top">
+					<div class="thumbnail">
+						<img class="card-img-top" src="<%= post.image %>" alt="Card image cap" />
+					</div>
+				</div>
 				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
+					<!-- _id값 주는 곳 -->
+					<a href="/post/<%= post._id %>"><h5 class="card-title"><%= post.title %></h5></a>
 					<p class="card-text">
-						This is a wider card with supporting text below as a natural lead-in to additional content. This card has
-						even longer content than the first to show that equal height action.
+						<%= post.description %>
 					</p>
 				</div>
 				<div class="card-footer">
-					<small class="text-muted">Last updated 3 mins ago</small>
+					Posted by
+					<a href="#"><%= post.username %></a>
+					on <%= post.createdAt.toDateString() %>
+					<span class="icon">
+						<i class="far fa-heart"></i>
+						<i class="far fa-bookmark"></i>
+						<i class="far fa-comments"></i>
+					</span>
 				</div>
 			</div>
+
+			<% }) %>
 		</div>
 	</body>
 </html>
