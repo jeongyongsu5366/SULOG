@@ -1,0 +1,17 @@
+.jumbotron {
+	color: #284738;
+	background: #dce2df;
+}
+
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.card-deck {
+	margin-left: 50px;
+	margin-right: 50px;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(1, 1fr);
+}
