@@ -11,6 +11,10 @@ const getPostsNew = require('./controllers/getPostsNew');
 const getPostsStore = require('./controllers/getPostsStore');
 const getEachPost = require('./controllers/getEachPost');
 
+// Middleware
+const storePost = require('./middleware/storePost');
+app.use('/posts/store', storePost);
+
 dotenv.config();
 
 mongoose
