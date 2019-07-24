@@ -10,6 +10,8 @@ const getHomepage = require('./controllers/getHomepage');
 const getPostsNew = require('./controllers/getPostsNew');
 const getPostsStore = require('./controllers/getPostsStore');
 const getEachPost = require('./controllers/getEachPost');
+const getRegister = require('./controllers/getRegister');
+const postRegister = require('./controllers/postRegister');
 
 // Middleware
 const storePost = require('./middleware/storePost');
@@ -30,9 +32,14 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', getHomepage);
+
 app.get('/posts/new', getPostsNew);
 app.post('/posts/store', getPostsStore);
 app.get('/post/:id', getEachPost);
+
+app.get('/auth/register', getRegister);
+app.post('/auth/register', postRegister);
+
 
 app.listen(4000, () => {
 	console.log('App listening on port 4000');
