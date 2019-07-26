@@ -1,7 +1,7 @@
-const { localUser, loginValidation } = require('../database/models/LocalUser');
+const { localUser, loginValidation } = require('../models/LocalUser');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const Post = require('../database/models/Post');
+const Post = require('../models/Post');
 
 module.exports = async function(req, res) {
 	const { error } = loginValidation(req.body);
@@ -20,7 +20,7 @@ module.exports = async function(req, res) {
 	};
 	const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: 86400 });
 	res.cookie('auth_token', token, { maxAge: 86400, httpOnly: true });
-	console.log(user);
 	const posts = await Post.find({});
-	res.status(200).render('homepage', { posts });
+	// res.status(200).render('homepage', { posts, user: user });
+	res.status(200).redirect('/');
 };

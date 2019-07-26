@@ -54,7 +54,7 @@ function loginValidation(user) {
 			.min(6)
 			.required()
 	};
-
+	
 	return Joi.validate(user, schema);
 }
 

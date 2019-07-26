@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link rel="stylesheet" href="/stylesheets/post.css" />
+		<script src="https://kit.fontawesome.com/3e1e584413.js"></script>
 		<title>Document</title>
 	</head>
 	<body>
@@ -27,6 +28,8 @@
 				<footer>
 					<p class="post__updated">This article was updated <%= post.createdAt.toDateString() %></p>
 				</footer>
+				<a href="/post/delete/<%= post._id %>" class="icon"><i class="fas fa-trash"></i></a>
+				<a href="/post/edit/<%= post._id %>" class="icon"><i class="fas fa-user-edit"></i></a>
 			</article>
 		</main>
 	</body>
